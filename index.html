@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIA - L'IA qui transforme vos avis en croissance</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="nav-logo">
+                <img src="logo.png" alt="MIA" class="logo-icon" width="53" height="32">
+                <span class="logo-text">MIA</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#features">Fonctionnalites</a></li>
+                <li><a href="#how-it-works">Comment ca marche</a></li>
+                <li><a href="#testimonials">Temoignages</a></li>
+                <li><a href="#demo" class="btn btn-nav">Essai gratuit <span class="btn-arrow">&rarr;</span></a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-bg">
+            <div class="hero-gradient"></div>
+            <div class="hero-pattern"></div>
+        </div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    Nouveau: Integration TripAdvisor disponible
+                </div>
+                <h1 class="hero-title">
+                    Transformez chaque avis en <span class="gradient-text">opportunite de croissance</span>
+                </h1>
+                <p class="hero-subtitle">
+                    MIA repond automatiquement a vos avis clients avec intelligence et empathie.
+                    Gagnez 10 heures par semaine tout en ameliorant votre reputation en ligne.
+                </p>
+                <div class="hero-cta">
+                    <a href="#demo" class="btn btn-primary btn-large">
+                        Commencer gratuitement
+                        <span class="btn-arrow">&rarr;</span>
+                    </a>
+                    <a href="#how-it-works" class="btn btn-ghost btn-large">
+                        <span class="play-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </span>
+                        Voir la demo
+                    </a>
+                </div>
+                <p class="hero-note">Configuration en 2 minutes &bull; Aucune carte requise</p>
+            </div>
+            <div class="hero-visual">
+                <div class="dashboard-preview">
+                    <div class="dashboard-header">
+                        <div class="dashboard-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <span class="dashboard-title">MIA Dashboard</span>
+                    </div>
+                    <div class="dashboard-content">
+                        <div class="dashboard-stat">
+                            <span class="stat-value">4.8</span>
+                            <span class="stat-label">Note moyenne</span>
+                            <div class="stat-stars">
+                                <svg viewBox="0 0 20 20" width="16" height="16" fill="#FFB800"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                <svg viewBox="0 0 20 20" width="16" height="16" fill="#FFB800"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                <svg viewBox="0 0 20 20" width="16" height="16" fill="#FFB800"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                <svg viewBox="0 0 20 20" width="16" height="16" fill="#FFB800"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                <svg viewBox="0 0 20 20" width="16" height="16" fill="#FFB800"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                            </div>
+                        </div>
+                        <div class="dashboard-review">
+                            <div class="review-header">
+                                <div class="review-avatar">JD</div>
+                                <div class="review-meta">
+                                    <span class="review-name">Jean Dupont</span>
+                                    <span class="review-date">Il y a 2 heures</span>
+                                </div>
+                                <span class="review-platform google">Google</span>
+                            </div>
+                            <p class="review-text">"Excellent service, equipe tres professionnelle!"</p>
+                            <div class="review-response">
+                                <div class="response-badge">
+                                    <svg viewBox="0 0 20 20" width="14" height="14" fill="#00D4FF"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
+                                    Reponse generee par MIA
+                                </div>
+                                <p>"Merci beaucoup Jean! Votre satisfaction est notre priorite..."</p>
+                            </div>
+                        </div>
+                        <div class="dashboard-metrics">
+                            <div class="metric">
+                                <span class="metric-value">+47%</span>
+                                <span class="metric-label">Reponses</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">2min</span>
+                                <span class="metric-label">Temps moyen</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="floating-card card-1">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="#00D4FF"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                    <span>156 avis traites ce mois</span>
+                </div>
+                <div class="floating-card card-2">
+                    <div class="card-icon-circle">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    </div>
+                    <span>Temps economise: 12h/semaine</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Logo Carousel -->
+    <section class="logos-section">
+        <div class="container">
+            <p class="logos-title">Connecte a toutes vos plateformes</p>
+            <div class="logos-carousel">
+                <div class="logos-track">
+                    <!-- Google -->
+                    <div class="logo-item">
+                        <svg viewBox="0 0 24 24" width="32" height="32">
+                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                        </svg>
+                        <span>Google</span>
+                    </div>
+                    <!-- TripAdvisor -->
+                    <div class="logo-item">
+                        <svg viewBox="0 0 24 24" width="32" height="32" fill="#00AA6C">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                        </svg>
+                        <span>TripAdvisor</span>
+                    </div>
+                    <!-- Facebook -->
+                    <div class="logo-item">
+                        <svg viewBox="0 0 24 24" width="32" height="32" fill="#1877F2">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                        <span>Facebook</span>
+                    </div>
+                    <!-- Instagram -->
+                    <div class="logo-item">
+                        <svg viewBox="0 0 24 24" width="32" height="32">
+                            <defs>
+                                <linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color:#FFDC80"/>
+                                    <stop offset="25%" style="stop-color:#FCAF45"/>
+                                    <stop offset="50%" style="stop-color:#F77737"/>
+                                    <stop offset="75%" style="stop-color:#C13584"/>
+                                    <stop offset="100%" style="stop-color:#833AB4"/>
+                                </linearGradient>
+                            </defs>
+                            <path fill="url(#ig-grad)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                        <span>Instagram</span>
+                    </div>
+                    <!-- Yelp -->
+                    <div class="logo-item">
+                        <svg viewBox="0 0 24 24" width="32" height="32" fill="#D32323">
+                            <path d="M20.16 12.594l-4.995 1.433c-.96.276-1.74-.8-1.176-1.63l2.905-4.308a1.072 1.072 0 011.596-.206 9.194 9.194 0 012.364 3.252 1.073 1.073 0 01-.694 1.459zm-3.725 5.25l-4.857-1.975c-.94-.382-.94-1.716 0-2.1l4.857-1.975a1.072 1.072 0 011.481.63 9.19 9.19 0 010 4.79 1.073 1.073 0 01-1.481.63zM11.5 3v8.5a1 1 0 01-2 0V3.22a9.192 9.192 0 012-.22z"/>
+                        </svg>
+                        <span>Yelp</span>
+                    </div>
+                    <!-- Libro -->
+                    <div class="logo-item">
+                        <svg viewBox="0 0 24 24" width="32" height="32" fill="#FF6B35">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                        <span>Libro</span>
+                    </div>
+                    <!-- Duplicate for infinite scroll -->
+                    <div class="logo-item">
+                        <svg viewBox="0 0 24 24" width="32" height="32">
+                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                        </svg>
+                        <span>Google</span>
+                    </div>
+                    <div class="logo-item">
+                        <svg viewBox="0 0 24 24" width="32" height="32" fill="#00AA6C">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                        </svg>
+                        <span>TripAdvisor</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="10000">0</span>
+                    <span class="stat-suffix">+</span>
+                    <span class="stat-text">Avis traites chaque mois</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="95">0</span>
+                    <span class="stat-suffix">%</span>
+                    <span class="stat-text">Taux de satisfaction client</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="10">0</span>
+                    <span class="stat-suffix">h</span>
+                    <span class="stat-text">Economisees par semaine</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="48">0</span>
+                    <span class="stat-suffix">h</span>
+                    <span class="stat-text">Temps de reponse moyen</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Fonctionnalites</span>
+                <h2 class="section-title">Une equipe IA complete<br>a votre service</h2>
+                <p class="section-subtitle">Trois assistants intelligents qui travaillent 24/7 pour gerer votre presence en ligne</p>
+            </div>
+
+            <div class="features-tabs">
+                <div class="tabs-nav">
+                    <button class="tab-btn active" data-tab="victor">
+                        <span class="tab-icon victor-icon">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
+                            </svg>
+                        </span>
+                        Victor
+                    </button>
+                    <button class="tab-btn" data-tab="oliv">
+                        <span class="tab-icon oliv-icon">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+                            </svg>
+                        </span>
+                        Oliv
+                    </button>
+                    <button class="tab-btn" data-tab="alex">
+                        <span class="tab-icon alex-icon">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/>
+                            </svg>
+                        </span>
+                        Alex
+                    </button>
+                </div>
+
+                <div class="tabs-content">
+                    <div class="tab-panel active" id="victor">
+                        <div class="tab-visual">
+                            <div class="feature-mockup">
+                                <div class="mockup-header">
+                                    <span class="mockup-badge">Victor.IA</span>
+                                    <span class="mockup-status online">En ligne</span>
+                                </div>
+                                <div class="mockup-content">
+                                    <div class="review-item incoming">
+                                        <div class="review-stars">
+                                            <svg viewBox="0 0 20 20" width="12" height="12" fill="#FFB800"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                            <svg viewBox="0 0 20 20" width="12" height="12" fill="#FFB800"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                            <svg viewBox="0 0 20 20" width="12" height="12" fill="#FFB800"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                            <svg viewBox="0 0 20 20" width="12" height="12" fill="#FFB800"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                            <svg viewBox="0 0 20 20" width="12" height="12" fill="#FFB800"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                        </div>
+                                        <p>"Service impeccable, je recommande!"</p>
+                                    </div>
+                                    <div class="ai-typing">
+                                        <span class="typing-indicator">
+                                            <span></span><span></span><span></span>
+                                        </span>
+                                        Victor redige une reponse...
+                                    </div>
+                                    <div class="review-item response">
+                                        <p>"Merci infiniment pour ce retour chaleureux! Toute l'equipe est ravie de savoir que..."</p>
+                                        <span class="response-time">Genere en 3 secondes</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-info">
+                            <h3>Gestion intelligente des avis</h3>
+                            <p class="tab-description">Victor analyse le sentiment de chaque avis et redige des reponses personnalisees qui refletent parfaitement le ton de votre etablissement.</p>
+                            <ul class="feature-list">
+                                <li>
+                                    <svg viewBox="0 0 20 20" width="20" height="20" fill="#00D4FF"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
+                                    Reponses en moins de 5 secondes
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 20 20" width="20" height="20" fill="#00D4FF"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
+                                    Adaptation au ton de votre marque
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 20 20" width="20" height="20" fill="#00D4FF"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
+                                    Gestion multi-plateformes
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 20 20" width="20" height="20" fill="#00D4FF"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
+                                    Validation avant publication
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tab-panel" id="oliv">
+                        <div class="tab-visual">
+                            <div class="feature-mockup analytics">
+                                <div class="mockup-header">
+                                    <span class="mockup-badge oliv">Oliv.IA</span>
+                                    <span class="mockup-period">30 derniers jours</span>
+                                </div>
+                                <div class="mockup-content">
+                                    <div class="analytics-chart">
+                                        <div class="chart-bars">
+                                            <div class="bar" style="height: 60%"></div>
+                                            <div class="bar" style="height: 75%"></div>
+                                            <div class="bar" style="height: 45%"></div>
+                                            <div class="bar" style="height: 90%"></div>
+                                            <div class="bar" style="height: 70%"></div>
+                                            <div class="bar highlight" style="height: 95%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="insight-card">
+                                        <span class="insight-icon">💡</span>
+                                        <p>"Le temps d'attente est mentionne dans 23% des avis negatifs. Considerez d'optimiser le service aux heures de pointe."</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-info">
+                            <h3>Analyse et insights actionnables</h3>
+                            <p class="tab-description">Oliv transforme vos avis en donnees exploitables. Identifiez les tendances, detectez les problemes et prenez des decisions eclairees.</p>
+                            <ul class="feature-list">
+                                <li>
+                                    <svg viewBox="0 0 20 20" width="20" height="20" fill="#00D4FF"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
+                                    Analyse de sentiment en temps reel
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 20 20" width="20" height="20" fill="#00D4FF"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
+                                    Rapports mensuels automatises
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 20 20" width="20" height="20" fill="#00D4FF"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
+                                    Detection des points d'amelioration
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 20 20" width="20" height="20" fill="#00D4FF"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
+                                    Benchmarking concurrentiel
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tab-panel" id="alex">
+                        <div class="tab-visual">
+                            <div class="feature-mockup social">
+                                <div class="mockup-header">
+                                    <span class="mockup-badge alex">Alex.IA</span>
+                                    <span class="mockup-status scheduled">3 publications planifiees</span>
+                                </div>
+                                <div class="mockup-content">
+                                    <div class="social-post">
+                                        <div class="post-preview">
+                                            <div class="post-image"></div>
+                                            <p class="post-caption">"Decouvrez notre nouvelle carte d'automne! 🍂 Des saveurs..."</p>
+                                        </div>
+                                        <div class="post-platforms">
+                                            <span class="platform fb">FB</span>
+                                            <span class="platform ig">IG</span>
+                                        </div>
+                                        <span class="post-time">Planifie pour demain 12h00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-info">
+                            <h3>Contenu social qui engage</h3>
+                            <p class="tab-description">Alex cree et planifie du contenu engageant pour vos reseaux sociaux, transformant vos clients satisfaits en ambassadeurs.</p>
+                            <ul class="feature-list">
+                                <li>
+                                    <svg viewBox="0 0 20 20" width="20" height="20" fill="#00D4FF"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
+                                    Generation de contenu IA
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 20 20" width="20" height="20" fill="#00D4FF"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
+                                    Planification automatique
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 20 20" width="20" height="20" fill="#00D4FF"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
+                                    Optimisation des horaires
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 20 20" width="20" height="20" fill="#00D4FF"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
+                                    A/B testing integre
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works Section -->
+    <section id="how-it-works" class="how-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Simple et rapide</span>
+                <h2 class="section-title">Operationnel en 3 etapes</h2>
+                <p class="section-subtitle">Commencez a gagner du temps des aujourd'hui</p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+                        </svg>
+                    </div>
+                    <h3>Connectez vos comptes</h3>
+                    <p>Liez Google, TripAdvisor, Facebook et vos autres plateformes en quelques clics securises.</p>
+                </div>
+
+                <div class="step-connector">
+                    <svg viewBox="0 0 100 20" preserveAspectRatio="none">
+                        <path d="M0 10 L100 10" stroke="url(#connector-grad)" stroke-width="2" stroke-dasharray="6 4" fill="none"/>
+                        <defs>
+                            <linearGradient id="connector-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#00D4FF"/>
+                                <stop offset="100%" style="stop-color:#0066FF"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
+                        </svg>
+                    </div>
+                    <h3>Personnalisez MIA</h3>
+                    <p>Definissez le ton, le style et les preferences de reponse qui correspondent a votre marque.</p>
+                </div>
+
+                <div class="step-connector">
+                    <svg viewBox="0 0 100 20" preserveAspectRatio="none">
+                        <path d="M0 10 L100 10" stroke="url(#connector-grad)" stroke-width="2" stroke-dasharray="6 4" fill="none"/>
+                    </svg>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3>Laissez MIA travailler</h3>
+                    <p>Validez les reponses suggerees ou activez le mode automatique. C'est aussi simple que ca.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Temoignages</span>
+                <h2 class="section-title">Ils nous font confiance</h2>
+                <p class="section-subtitle">Decouvrez comment MIA transforme la gestion des avis pour des centaines de restaurateurs</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card featured">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <svg viewBox="0 0 24 24" width="32" height="32" fill="#00D4FF" opacity="0.3">
+                                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                            </svg>
+                        </div>
+                        <blockquote>
+                            "Avant MIA, je passais 2 heures par jour a repondre aux avis. Maintenant, je valide les reponses en 10 minutes. Ma note Google est passee de 4.2 a 4.7 en 3 mois."
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <span>EM</span>
+                            </div>
+                            <div class="author-info">
+                                <strong>Emmanuelle Martin</strong>
+                                <span>Proprietaire, Faite a l'Os</span>
+                            </div>
+                        </div>
+                        <div class="testimonial-stats">
+                            <div class="tstat">
+                                <span class="tstat-value">+0.5</span>
+                                <span class="tstat-label">Note Google</span>
+                            </div>
+                            <div class="tstat">
+                                <span class="tstat-value">-90%</span>
+                                <span class="tstat-label">Temps de gestion</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <blockquote>
+                            "On n'avait litteralement pas le temps. Notre reputation souffrait. MIA a tout change."
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <span>EL</span>
+                            </div>
+                            <div class="author-info">
+                                <strong>Eric Lavoie</strong>
+                                <span>Directeur, Hotel Le Manoir</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <blockquote>
+                            "C'est comme avoir un employe dedie aux avis, mais disponible 24/7 et pour une fraction du cout."
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <span>NL</span>
+                            </div>
+                            <div class="author-info">
+                                <strong>Nicolas & Lou</strong>
+                                <span>Gerants, Salon d'Edgard</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="demo" class="cta-section">
+        <div class="cta-bg">
+            <div class="cta-gradient"></div>
+        </div>
+        <div class="container">
+            <div class="cta-content">
+                <h2>Pret a transformer votre gestion des avis?</h2>
+                <p>Rejoignez les centaines de restaurateurs qui gagnent du temps et ameliorent leur reputation avec MIA.</p>
+
+                <form class="cta-form" id="signup-form">
+                    <div class="form-row">
+                        <input type="text" name="restaurant" placeholder="Nom du restaurant" required>
+                        <input type="email" name="email" placeholder="Email professionnel" required>
+                        <button type="submit" class="btn btn-white">
+                            Commencer gratuitement
+                            <span class="btn-arrow">&rarr;</span>
+                        </button>
+                    </div>
+                    <p class="form-note">Essai gratuit de 14 jours &bull; Aucune carte bancaire requise &bull; Annulation a tout moment</p>
+                </form>
+
+                <div class="trust-badges">
+                    <div class="trust-item">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+                        <span>Donnees securisees</span>
+                    </div>
+                    <div class="trust-item">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        <span>Conforme Loi 25</span>
+                    </div>
+                    <div class="trust-item">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        <span>Heberge au Canada</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <a href="#" class="footer-logo">
+                        <img src="logo.png" alt="MIA" width="53" height="32">
+                        <span>MIA</span>
+                    </a>
+                    <p>L'intelligence artificielle qui fait rayonner votre entreprise.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Produit</h4>
+                        <ul>
+                            <li><a href="#features">Fonctionnalites</a></li>
+                            <li><a href="#how-it-works">Comment ca marche</a></li>
+                            <li><a href="#">Tarifs</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Entreprise</h4>
+                        <ul>
+                            <li><a href="#">A propos</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Carrieres</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="#">Confidentialite</a></li>
+                            <li><a href="#">Conditions</a></li>
+                            <li><a href="#">Securite</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 MIA. Tous droits reserves.</p>
+                <a href="mailto:contact@mia.ai" class="footer-email">contact@mia.ai</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn?.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    navLinks?.classList.remove('active');
+                    mobileMenuBtn?.classList.remove('active');
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            lastScroll = currentScroll;
+        });
+
+        // Tabs
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabPanels = document.querySelectorAll('.tab-panel');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tabId = btn.dataset.tab;
+
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabPanels.forEach(p => p.classList.remove('active'));
+
+                btn.classList.add('active');
+                document.getElementById(tabId)?.classList.add('active');
+            });
+        });
+
+        // Animated counters
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px'
+        };
+
+        const animateCounter = (el) => {
+            const target = parseInt(el.dataset.target);
+            const duration = 2000;
+            const start = performance.now();
+
+            const update = (currentTime) => {
+                const elapsed = currentTime - start;
+                const progress = Math.min(elapsed / duration, 1);
+                const easeOut = 1 - Math.pow(1 - progress, 3);
+                const current = Math.floor(easeOut * target);
+
+                el.textContent = current.toLocaleString();
+
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                }
+            };
+
+            requestAnimationFrame(update);
+        };
+
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('.stat-number');
+                    counters.forEach(counter => animateCounter(counter));
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) statsObserver.observe(statsSection);
+
+        // Form submission
+        document.getElementById('signup-form')?.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Merci! Nous vous contacterons dans les 24 heures.');
+        });
+
+        // Scroll reveal animations
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.step-card, .testimonial-card, .feature-mockup').forEach(el => {
+            el.classList.add('reveal');
+            revealObserver.observe(el);
+        });
+    </script>
+</body>
+</html>
