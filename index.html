@@ -396,6 +396,28 @@
                         </div>
                     </form>
                     <p class="pilote-form-fine">Accès gratuit &bull; Aucune carte requise &bull; Annulation à tout moment</p>
+                    <p class="pilote-error" id="pilot-error" role="alert" hidden>
+                        Un problème est survenu lors de l'envoi. Réessayez, ou écrivez-nous à
+                        <a href="mailto:contact@miacm.ca">contact@miacm.ca</a>.
+                    </p>
+                    <div class="pilote-success" id="pilot-success" role="status" aria-live="polite" hidden>
+                        <div class="pilote-success-check" aria-hidden="true">
+                            <svg viewBox="0 0 52 52">
+                                <circle class="psc-circle" cx="26" cy="26" r="24"/>
+                                <path class="psc-check" d="M15 27l7 7 15-16"/>
+                            </svg>
+                        </div>
+                        <h3 class="pilote-success-title">Merci, <span class="ps-name">restaurateur</span>&nbsp;!</h3>
+                        <p class="pilote-success-msg">
+                            Votre candidature<span class="ps-resto-wrap" hidden> pour <strong class="ps-resto"></strong></span>
+                            a bien été reçue. Notre équipe vous contactera très bientôt pour discuter des
+                            prochaines étapes de la phase pilote.
+                        </p>
+                        <p class="pilote-success-fine">
+                            Une question d'ici là&nbsp;? Écrivez-nous à
+                            <a href="mailto:contact@miacm.ca">contact@miacm.ca</a>.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -508,7 +530,7 @@
                         <h4>Légal</h4>
                         <ul>
                             <li><a href="politique-de-confidentialite.pdf" target="_blank" rel="noopener">Confidentialité</a></li>
-                            <li><a href="#">Conditions</a></li>
+                            <li><a href="conditions-generales-utilisation.pdf" target="_blank" rel="noopener">Conditions</a></li>
                         </ul>
                     </div>
                 </div>
@@ -666,24 +688,46 @@
 
             document.getElementById('pilot-back')?.addEventListener('click', () => showStep(1));
 
+            const card = pilotForm.closest('.pilote-form-card');
+            const successPanel = card.querySelector('.pilote-success');
+            const errorEl = card.querySelector('.pilote-error');
+            const formNote = card.querySelector('.pilote-form-note');
+            const formFine = card.querySelector('.pilote-form-fine');
+            const cardTitle = card.querySelector('h3');
+
             pilotForm.addEventListener('submit', async (e) => {
                 e.preventDefault();
                 const { firstname, lastname } = splitName(nameInput.value);
+                const restaurant = restaurantInput.value.trim();
+                errorEl.hidden = true;
                 submitBtn.disabled = true;
                 try {
                     await submitToHubSpot({
                         email: emailInput.value,
                         firstname,
                         lastname,
-                        company: restaurantInput.value,
+                        company: restaurant,
                         phone: phoneInput.value
                     });
-                    alert('Merci ! Votre candidature a bien été reçue. Nous vous contacterons sous peu.');
+                    // Personalize and reveal the success panel in place of the form.
+                    successPanel.querySelector('.ps-name').textContent = firstname || 'restaurateur';
+                    const restoWrap = successPanel.querySelector('.ps-resto-wrap');
+                    if (restaurant) {
+                        successPanel.querySelector('.ps-resto').textContent = restaurant;
+                        restoWrap.hidden = false;
+                    } else {
+                        restoWrap.hidden = true;
+                    }
+                    pilotForm.hidden = true;
+                    if (formNote) formNote.hidden = true;
+                    if (formFine) formFine.hidden = true;
+                    if (cardTitle) cardTitle.hidden = true;
+                    successPanel.hidden = false;
                     pilotForm.reset();
                     showStep(1);
                 } catch (err) {
                     console.error(err);
-                    alert("Oups — un problème est survenu lors de l'envoi. Réessayez, ou écrivez-nous à contact@miacm.ca.");
+                    errorEl.hidden = false;
                 } finally {
                     submitBtn.disabled = false;
                 }
