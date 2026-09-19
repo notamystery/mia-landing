@@ -237,7 +237,7 @@ h3 { font-size: clamp(1.125rem, 2vw, 1.375rem); }
     gap: 60px;
     align-items: center;
 }
-.hero-content { max-width: 560px; }
+.hero-content { max-width: 600px; }
 
 .hero-badge {
     display: inline-flex;
@@ -265,7 +265,7 @@ h3 { font-size: clamp(1.125rem, 2vw, 1.375rem); }
     50% { opacity: 0.5; transform: scale(1.2); }
 }
 
-.hero-title { margin-bottom: 24px; }
+.hero-title { margin-bottom: 24px; font-size: clamp(2rem, 3.9vw, 2.75rem); }
 .hero-subtitle {
     font-size: 1.25rem;
     color: var(--text-secondary);
