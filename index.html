@@ -499,7 +499,7 @@
                         <span class="multi-store" style="left:83%;top:26%"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1.5-5h15L21 9"/><path d="M3 9a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0"/><path d="M5 12v8h14v-8"/><path d="M10 20v-5h4v5"/></svg></span>
                         <span class="multi-hub"><img src="logo.png" alt="" width="40" height="24"></span>
                     </div>
-                    <a href="#pilote" class="btn btn-ghost btn-large pricing-btn">
+                    <a href="#pilote" class="btn btn-ghost btn-large pricing-btn" data-open-talk>
                         Obtenir une soumission <span class="btn-arrow">&rarr;</span>
                     </a>
                 </div>
@@ -538,6 +538,69 @@
             </div>
         </div>
     </section>
+
+    <!-- Multi-location quote dialog -->
+    <dialog class="talk-dialog" id="talk-dialog" aria-labelledby="talk-title">
+        <button type="button" class="talk-close" data-close-talk aria-label="Fermer">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+        <div class="talk-body">
+            <div class="talk-head" id="talk-head">
+                <span class="section-badge">Multi-commerces</span>
+                <h3 id="talk-title">Parlons de vos commerces</h3>
+                <p class="talk-intro">Dites-nous en un peu plus sur votre réalité. Notre équipe vous contactera pour une soumission adaptée.</p>
+            </div>
+            <form class="pilote-form talk-form" id="talk-form">
+                <div class="talk-row">
+                    <label>Nom et prénom
+                        <input type="text" name="name" placeholder="Votre nom et prénom" autocomplete="name" required>
+                    </label>
+                    <label>Courriel professionnel
+                        <input type="email" name="email" placeholder="vous@votreentreprise.ca" autocomplete="email" required>
+                    </label>
+                </div>
+                <div class="talk-row">
+                    <label>Entreprise ou groupe
+                        <input type="text" name="company" placeholder="Nom de votre entreprise" autocomplete="organization" required>
+                    </label>
+                    <label><span>Téléphone <span class="pilote-optional">(facultatif)</span></span>
+                        <input type="tel" name="phone" placeholder="(514) 000-0000" autocomplete="tel">
+                    </label>
+                </div>
+                <label>Nombre de commerces
+                    <select name="locations" required>
+                        <option value="" disabled selected>Choisir</option>
+                        <option>2 à 5</option>
+                        <option>6 à 10</option>
+                        <option>11 à 25</option>
+                        <option>Plus de 25</option>
+                    </select>
+                </label>
+                <label><span>Parlez-nous de votre réalité <span class="pilote-optional">(facultatif)</span></span>
+                    <textarea name="about" rows="3" placeholder="Type de commerces, régions, plateformes d'avis utilisées, vos besoins..."></textarea>
+                </label>
+                <button type="submit" class="btn btn-primary btn-large">
+                    Envoyer ma demande
+                    <span class="btn-arrow">&rarr;</span>
+                </button>
+                <p class="pilote-error" id="talk-error" role="alert" hidden>
+                    Un problème est survenu lors de l'envoi. Réessayez, ou écrivez-nous à
+                    <a href="mailto:contact@miacm.ca">contact@miacm.ca</a>.
+                </p>
+            </form>
+            <div class="pilote-success talk-success" id="talk-success" role="status" aria-live="polite" hidden>
+                <div class="pilote-success-check" aria-hidden="true">
+                    <svg viewBox="0 0 52 52">
+                        <circle class="psc-circle" cx="26" cy="26" r="24"/>
+                        <path class="psc-check" d="M15 27l7 7 15-16"/>
+                    </svg>
+                </div>
+                <h3 class="pilote-success-title">Merci, <span class="ts-name">entrepreneur</span>&nbsp;!</h3>
+                <p class="pilote-success-msg">Votre demande a bien été reçue. Notre équipe vous contactera très bientôt pour en discuter.</p>
+                <button type="button" class="btn btn-ghost" data-close-talk>Fermer</button>
+            </div>
+        </div>
+    </dialog>
 
     <!-- Footer -->
     <footer class="footer">
@@ -658,25 +721,62 @@
         const statsSection = document.querySelector('.stats-section');
         if (statsSection) statsObserver.observe(statsSection);
 
+        // ==========================================================================
+        // HubSpot configuration — fill in these two values.
+        //   1. In HubSpot, create a form (Marketing > Forms) with these fields,
+        //      all marked OPTIONAL (client-side validation already enforces them):
+        //         Email, First name, Last name, Company name, Phone number.
+        //   2. HUBSPOT_PORTAL_ID : Settings > Account Management > Account Defaults
+        //      (also the number in your HubSpot app URL, e.g. app.hubspot.com/…/PORTALID/…).
+        //   3. HUBSPOT_FORM_GUID : open the form > Actions > Share / embed code — the
+        //      guid appears as formId/formGuid in the snippet.
+        // The endpoint below is HubSpot's PUBLIC forms API — no secret key, safe on a
+        // static site. Leads are deduplicated by email, so the step-1 partial submission
+        // and the final submission update the same contact.
+        // ==========================================================================
+        const HUBSPOT_PORTAL_ID = '343395958';
+        const HUBSPOT_FORM_GUID = 'e3c6e8b2-418d-448c-9183-a4af81c4e38e';
+
+        // Split "Nom et prénom" into HubSpot's firstname / lastname properties.
+        const splitName = (full) => {
+            const parts = (full || '').trim().split(/\s+/).filter(Boolean);
+            const firstname = parts.shift() || '';
+            return { firstname, lastname: parts.join(' ') };
+        };
+
+        const getCookie = (name) => {
+            const m = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
+            return m ? m.pop() : '';
+        };
+
+        // POST to HubSpot's public forms submission API. Empty fields are dropped so a
+        // partial (step-1) submission is accepted. Returns silently if not yet configured.
+        const submitToHubSpot = async (fields) => {
+            if (HUBSPOT_PORTAL_ID === 'YOUR_PORTAL_ID' || HUBSPOT_FORM_GUID === 'YOUR_FORM_GUID') return;
+            const url = `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_GUID}`;
+            const hutk = getCookie('hubspotutk');
+            const payload = {
+                fields: Object.entries(fields)
+                    .filter(([, value]) => value)
+                    .map(([name, value]) => ({ name, value })),
+                context: {
+                    pageUri: window.location.href,
+                    pageName: document.title,
+                    ...(hutk ? { hutk } : {})
+                }
+            };
+            const res = await fetch(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+            if (!res.ok) throw new Error('HubSpot submission failed: ' + res.status + ' ' + (await res.text()));
+            return res.json();
+        };
+
         // Two-step pilot form (static site — no backend yet)
         const pilotForm = document.getElementById('pilot-form');
         if (pilotForm) {
-            // ==========================================================================
-            // HubSpot configuration — fill in these two values.
-            //   1. In HubSpot, create a form (Marketing > Forms) with these fields,
-            //      all marked OPTIONAL (client-side validation already enforces them):
-            //         Email, First name, Last name, Company name, Phone number.
-            //   2. HUBSPOT_PORTAL_ID : Settings > Account Management > Account Defaults
-            //      (also the number in your HubSpot app URL, e.g. app.hubspot.com/…/PORTALID/…).
-            //   3. HUBSPOT_FORM_GUID : open the form > Actions > Share / embed code — the
-            //      guid appears as formId/formGuid in the snippet.
-            // The endpoint below is HubSpot's PUBLIC forms API — no secret key, safe on a
-            // static site. Leads are deduplicated by email, so the step-1 partial submission
-            // and the final submission update the same contact.
-            // ==========================================================================
-            const HUBSPOT_PORTAL_ID = '343395958';
-            const HUBSPOT_FORM_GUID = 'e3c6e8b2-418d-448c-9183-a4af81c4e38e';
-
             const step1 = pilotForm.querySelector('.pilote-step[data-step="1"]');
             const step2 = pilotForm.querySelector('.pilote-step[data-step="2"]');
             const fill = pilotForm.querySelector('.pilote-progress-fill');
@@ -693,43 +793,6 @@
                 step2.hidden = n !== 2;
                 fill.dataset.step = String(n);
                 if (label) label.textContent = String(n);
-            };
-
-            // Split "Nom et prénom" into HubSpot's firstname / lastname properties.
-            const splitName = (full) => {
-                const parts = (full || '').trim().split(/\s+/).filter(Boolean);
-                const firstname = parts.shift() || '';
-                return { firstname, lastname: parts.join(' ') };
-            };
-
-            const getCookie = (name) => {
-                const m = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
-                return m ? m.pop() : '';
-            };
-
-            // POST to HubSpot's public forms submission API. Empty fields are dropped so a
-            // partial (step-1) submission is accepted. Returns silently if not yet configured.
-            const submitToHubSpot = async (fields) => {
-                if (HUBSPOT_PORTAL_ID === 'YOUR_PORTAL_ID' || HUBSPOT_FORM_GUID === 'YOUR_FORM_GUID') return;
-                const url = `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_GUID}`;
-                const hutk = getCookie('hubspotutk');
-                const payload = {
-                    fields: Object.entries(fields)
-                        .filter(([, value]) => value)
-                        .map(([name, value]) => ({ name, value })),
-                    context: {
-                        pageUri: window.location.href,
-                        pageName: document.title,
-                        ...(hutk ? { hutk } : {})
-                    }
-                };
-                const res = await fetch(url, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-                if (!res.ok) throw new Error('HubSpot submission failed: ' + res.status + ' ' + (await res.text()));
-                return res.json();
             };
 
             document.getElementById('pilot-next')?.addEventListener('click', () => {
@@ -793,6 +856,68 @@
                     errorEl.hidden = false;
                 } finally {
                     submitBtn.disabled = false;
+                }
+            });
+        }
+
+        // Multi-location quote dialog
+        const talkDialog = document.getElementById('talk-dialog');
+        if (talkDialog) {
+            const talkForm = document.getElementById('talk-form');
+            const talkSuccess = document.getElementById('talk-success');
+            const talkError = document.getElementById('talk-error');
+            const talkSubmit = talkForm.querySelector('button[type="submit"]');
+            const talkHead = document.getElementById('talk-head');
+
+            const openTalk = () => {
+                talkForm.hidden = false;
+                talkHead.hidden = false;
+                talkSuccess.hidden = true;
+                talkError.hidden = true;
+                talkDialog.showModal();
+                document.body.classList.add('dialog-open');
+            };
+            document.querySelectorAll('[data-open-talk]').forEach(el => el.addEventListener('click', (e) => {
+                if (typeof talkDialog.showModal !== 'function') return; // very old browser: fall back to the pilot form link
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                openTalk();
+            }, true));
+            talkDialog.querySelectorAll('[data-close-talk]').forEach(el => el.addEventListener('click', () => talkDialog.close()));
+            // Click on the backdrop closes the dialog
+            talkDialog.addEventListener('click', (e) => { if (e.target === talkDialog) talkDialog.close(); });
+            talkDialog.addEventListener('close', () => document.body.classList.remove('dialog-open'));
+
+            talkForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const data = new FormData(talkForm);
+                const { firstname, lastname } = splitName(data.get('name'));
+                const email = data.get('email');
+                talkError.hidden = true;
+                talkSubmit.disabled = true;
+                try {
+                    await submitToHubSpot({
+                        email,
+                        firstname,
+                        lastname,
+                        company: data.get('company').trim(),
+                        phone: data.get('phone')
+                    });
+                    // Sent separately so the lead is still captured if the HubSpot form
+                    // does not (yet) have a "message" field and rejects it.
+                    const about = (data.get('about') || '').trim();
+                    const message = 'Demande de soumission multi-commerces\nNombre de commerces : ' + data.get('locations') + (about ? '\n\n' + about : '');
+                    submitToHubSpot({ email, message }).catch(err => console.error(err));
+                    talkSuccess.querySelector('.ts-name').textContent = firstname || 'entrepreneur';
+                    talkForm.hidden = true;
+                    talkHead.hidden = true;
+                    talkSuccess.hidden = false;
+                    talkForm.reset();
+                } catch (err) {
+                    console.error(err);
+                    talkError.hidden = false;
+                } finally {
+                    talkSubmit.disabled = false;
                 }
             });
         }
