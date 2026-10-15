@@ -1668,6 +1668,60 @@ h3 { font-size: clamp(1.125rem, 2vw, 1.375rem); }
     line-height: 1.25;
     margin-bottom: 10px;
 }
+.pricing-card-multi {
+    background:
+        radial-gradient(circle at 50% 62%, rgba(0,212,255,0.10), transparent 60%),
+        linear-gradient(180deg, #f0f9ff 0%, #ffffff 70%);
+}
+.multi-visual {
+    position: relative;
+    height: 200px;
+    margin: 4px 0 28px;
+}
+.multi-lines {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+.multi-lines path {
+    fill: none;
+    stroke: var(--primary-dark);
+    stroke-opacity: 0.35;
+    stroke-width: 2;
+    stroke-dasharray: 5 6;
+    vector-effect: non-scaling-stroke;
+    animation: multi-flow 1.6s linear infinite;
+}
+@keyframes multi-flow { to { stroke-dashoffset: -22; } }
+.multi-store,
+.multi-hub {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+}
+.multi-store {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: white;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    color: var(--primary-dark);
+}
+.multi-hub {
+    left: 50%;
+    top: 76%;
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 0 0 8px rgba(0,212,255,0.12), 0 0 0 16px rgba(0,102,255,0.06), var(--shadow-lg);
+}
+.multi-hub img { width: 40px; height: auto; }
 .pricing-btn { margin-top: auto; width: 100%; padding-left: 20px; padding-right: 20px; white-space: nowrap; }
 .pricing-fine {
     margin-top: 16px;
