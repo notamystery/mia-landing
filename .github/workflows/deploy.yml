@@ -22,6 +22,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
+      - name: Stamp stylesheet version (cache busting, to the minute)
+        run: |
+          v=$(TZ=America/Toronto date +%Y%m%d%H%M)
+          sed -i -E "s/styles\.css\?v=[0-9]+/styles.css?v=$v/" *.html
+          grep -o 'styles.css?v=[0-9]*' *.html
       - uses: actions/upload-pages-artifact@v3
         with:
           path: .
