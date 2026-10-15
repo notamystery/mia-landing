@@ -380,7 +380,7 @@
                 </div>
 
                 <div class="pilote-form-card">
-                    <h3>Postuler comme entreprise pilote</h3>
+                    <h3>Postuler comme pilote</h3>
                     <p class="pilote-form-note">Places limitées. Accès gratuit pendant toute la phase pilote.</p>
                     <form class="pilote-form" id="pilot-form">
                         <div class="pilote-progress">
@@ -405,6 +405,9 @@
                             </label>
                             <label>Numéro de téléphone
                                 <input type="tel" name="phone" placeholder="(514) 000-0000">
+                            </label>
+                            <label><span>Parlez-nous un peu de vous <span class="pilote-optional">(facultatif)</span></span>
+                                <textarea name="about" rows="3" placeholder="Type d'entreprise, nombre de commerces, vos besoins..."></textarea>
                             </label>
                             <div class="pilote-step-actions">
                                 <button type="button" class="pilote-back" id="pilot-back">&larr; Retour</button>
@@ -485,7 +488,7 @@
                     <span class="pricing-flag muted">Multi-commerces</span>
                     <h3 class="pricing-multi-title">Vous êtes en charge de plusieurs commerces&nbsp;?</h3>
                     <p class="pricing-period">Obtenez une soumission adaptée à votre réalité.</p>
-                    <a href="mailto:contact@miacm.ca?subject=Soumission%20multi-commerces" class="btn btn-ghost btn-large pricing-btn">
+                    <a href="#pilote" class="btn btn-ghost btn-large pricing-btn">
                         Obtenir une soumission <span class="btn-arrow">&rarr;</span>
                     </a>
                 </div>
@@ -671,6 +674,7 @@
             const emailInput = pilotForm.querySelector('input[name="email"]');
             const restaurantInput = pilotForm.querySelector('input[name="restaurant"]');
             const phoneInput = pilotForm.querySelector('input[name="phone"]');
+            const aboutInput = pilotForm.querySelector('textarea[name="about"]');
             const submitBtn = pilotForm.querySelector('button[type="submit"]');
 
             const showStep = (n) => {
@@ -750,6 +754,13 @@
                         company: restaurant,
                         phone: phoneInput.value
                     });
+                    // Sent separately so the application still goes through if the HubSpot
+                    // form does not (yet) have a "message" field and rejects it.
+                    const about = aboutInput?.value.trim();
+                    if (about) {
+                        submitToHubSpot({ email: emailInput.value, message: about })
+                            .catch(err => console.error(err));
+                    }
                     // Personalize and reveal the success panel in place of the form.
                     successPanel.querySelector('.ps-name').textContent = firstname || 'entrepreneur';
                     const restoWrap = successPanel.querySelector('.ps-resto-wrap');
